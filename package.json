@@ -9,9 +9,7 @@
         "build": "tsc -b && vite build",
         "preview": "vite preview",
         "lint": "biome lint .",
-        "format": "biome format . --write",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d dist"
+        "format": "biome format . --write"
     },
     "dependencies": {
         "@tanstack/react-router": "^1.131.13",
@@ -29,7 +27,6 @@
         "@types/react-dom": "^19.1.7",
         "@vitejs/plugin-react": "^5.0.0",
         "autoprefixer": "^10.4.21",
-        "gh-pages": "^6.3.0",
         "tailwindcss": "^4.1.12",
         "typescript": "^5.6.3",
         "vite": "^7.1.2"
