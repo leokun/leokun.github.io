@@ -1,0 +1,23 @@
+[
+    {
+        "id": "vite-router-tailwind",
+        "title": "Structurer un portfolio Vite + TanStack Router + Tailwind",
+        "date": "2025-08-15",
+        "excerpt": "Notes sur l’architecture, la gestion des données statiques et le style rétro.",
+        "href": "#"
+    },
+    {
+        "id": "react-typescript-patterns",
+        "title": "Patterns TypeScript pour composants React",
+        "date": "2025-06-18",
+        "excerpt": "Props typées, discriminated unions, et petites astuces pour une DX plus fluide.",
+        "href": "#"
+    },
+    {
+        "id": "tailwind-4-themes",
+        "title": "Tailwind 4: thèmes et tokens CSS",
+        "date": "2025-05-10",
+        "excerpt": "Créer un thème rétro presque monochrome avec des accents teal et des tokens CSS.",
+        "href": "#"
+    }
+]

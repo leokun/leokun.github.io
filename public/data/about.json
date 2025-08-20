@@ -1,0 +1,18 @@
+{
+    "intro": "Développeur frontend (React/TypeScript), j’aime les interfaces sobres, les systèmes typés et les workflows rapides.",
+    "bio": "Je m’appelle Léo. Je conçois des applications web claires, performantes et maintenables. Mon terrain de jeu : React, TypeScript, Vite et l’écosystème moderne.\n\nJ’accorde de l’importance à la DX et à la qualité : types explicites, revues de code, tests ciblés et documentation utile. J’aime les interfaces simples, accessibles, et des parcours utilisateurs sans friction.\n\nCôté collaboration, j’apprécie les feedbacks courts, les itérations fréquentes et un backlog réaliste. Ce portfolio reflète mon style : minimal, rétro, presque monochrome avec des accents teal.",
+    "links": [
+        {
+            "label": "GitHub",
+            "href": "https://github.com/leokun"
+        },
+        {
+            "label": "LinkedIn",
+            "href": "https://www.linkedin.com/in/leostewart"
+        },
+        {
+            "label": "Email",
+            "href": "mailto:contact@example.com"
+        }
+    ]
+}
