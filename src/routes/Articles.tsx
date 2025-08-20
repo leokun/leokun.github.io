@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ArticleListSchema } from "@/lib/schemas";
 
 type Article = {
   id: string;
@@ -14,7 +15,10 @@ export function Articles() {
   useEffect(() => {
     fetch("/data/articles.json")
       .then((r) => r.json())
-      .then(setItems)
+      .then((data) => {
+        const parsed = ArticleListSchema.safeParse(data);
+        setItems(parsed.success ? parsed.data : []);
+      })
       .catch(() => setItems([]));
   }, []);
 

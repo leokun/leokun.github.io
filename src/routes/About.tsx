@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { AboutSchema } from "@/lib/schemas";
 
 type AboutData = {
   intro: string;
@@ -12,7 +13,10 @@ export function About() {
   useEffect(() => {
     fetch("/data/about.json")
       .then((r) => r.json())
-      .then(setData)
+      .then((data) => {
+        const parsed = AboutSchema.safeParse(data);
+        setData(parsed.success ? parsed.data : null);
+      })
       .catch(() => setData(null));
   }, []);
 

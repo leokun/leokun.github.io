@@ -1,5 +1,6 @@
 import { useEffect, useId, useMemo, useState } from "react";
 import { markdownToHtml } from "@/lib/markdown";
+import { ExperienceListSchema } from "@/lib/schemas";
 import { TechIcon } from "../ui/TechIcon";
 
 type ExperienceItem = {
@@ -24,7 +25,11 @@ export function Experience() {
   useEffect(() => {
     fetch("/data/experience.json")
       .then((r) => r.json())
-      .then(setItems)
+      .then((data) => {
+        const parsed = ExperienceListSchema.safeParse(data);
+        if (parsed.success) setItems(parsed.data);
+        else setItems([]);
+      })
       .catch(() => setItems([]));
   }, []);
 
