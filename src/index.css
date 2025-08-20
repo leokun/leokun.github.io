@@ -27,7 +27,7 @@
   --text-8xl: calc(var(--fs-base) * 6);
 }
 
-/* Rétro monochrome + teal accents */
+/* Monochrome retro + teal accents */
 ::selection {
   background: #0fb9b1;
   color: #001010;

@@ -40,7 +40,7 @@ import {
 } from "react-icons/si";
 
 const ICONS: Record<string, IconType> = {
-  // langages / runtimes
+  // languages / runtimes
   typescript: SiTypescript,
   go: SiGo,
   python: SiPython,
@@ -79,11 +79,11 @@ const ICONS: Record<string, IconType> = {
   node: SiNodedotjs,
   nodejs: SiNodedotjs,
 
-  // db
+  // databases
   mongodb: SiMongodb,
   mysql: SiMysql,
 
-  // vendors / cloud / autres
+  // vendors / cloud / others
   microsoft: FaMicrosoft,
   salesforce: SiSalesforce,
   zendesk: SiZendesk,

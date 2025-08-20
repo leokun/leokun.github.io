@@ -9,7 +9,10 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "biome check .",
-    "lint:fix": "biome check . --write"
+    "lint:fix": "biome check . --write",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.131.13",
@@ -27,8 +30,12 @@
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^5.0.0",
     "autoprefixer": "^10.4.21",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
     "tailwindcss": "^4.1.12",
     "typescript": "^5.6.3",
-    "vite": "^7.1.2"
+    "vite": "^7.1.2",
+    "vitest": "^2.1.5",
+    "jsdom": "^25.0.1"
   }
 }

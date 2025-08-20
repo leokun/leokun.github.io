@@ -41,7 +41,7 @@ type GitHubRepo = {
 type RepoWithLangs = GitHubRepo & { languages: string[] };
 
 const OWNER = "leokun";
-const MAX_REPOS = 30; // limite pour réduire les appels /languages et rester sous la limite de rate
+const MAX_REPOS = 30; // limit to reduce /languages calls and stay within API rate limits
 const CACHE_KEY = `gh_${OWNER}_repos_v2`;
 const CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutes
 
@@ -83,10 +83,10 @@ function languageBadge(lang: string) {
   );
 }
 
-// Affichage des topics GitHub avec TechIcon
+// Show GitHub topics with TechIcon
 
-function inferTopics(repo: GitHubRepo): string[] {
-  // Heuristique simple si topics non fournis: deviner à partir du nom/description
+export function inferTopics(repo: GitHubRepo): string[] {
+  // Simple heuristic if topics are missing: guess from name/description
   const txt = `${repo.name} ${repo.description ?? ""}`.toLowerCase();
   const pool = [
     "react",
@@ -135,7 +135,7 @@ async function fetchRepos(): Promise<GitHubRepo[]> {
   });
   if (!r.ok) throw new Error(`GitHub API error: ${r.status}`);
   const data = (await r.json()) as GitHubRepo[];
-  // tri côté client par updated_at desc, puis limite
+  // client-side sort by updated_at desc, then limit
   return data
     .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
     .slice(0, MAX_REPOS);
@@ -248,13 +248,13 @@ export function Projects() {
               </span>
             </div>
             <p className="text-sm text-fg/70 mt-1">{p.description ?? "—"}</p>
-            {/* Langages */}
+            {/* Languages */}
             {p.languages.length > 0 && (
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {p.languages.map((l) => languageBadge(l))}
               </div>
             )}
-            {/* Technos (topics GitHub + heuristique) */}
+            {/* Technologies (GitHub topics + heuristic) */}
             <RepoTopics repo={p} />
           </li>
         ))}

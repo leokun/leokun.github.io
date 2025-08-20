@@ -1,6 +1,5 @@
-import DOMPurify from "isomorphic-dompurify";
-import { marked } from "marked";
 import { useEffect, useId, useMemo, useState } from "react";
+import { markdownToHtml } from "@/lib/markdown";
 import { TechIcon } from "../ui/TechIcon";
 
 type ExperienceItem = {
@@ -13,7 +12,7 @@ type ExperienceItem = {
   stack?: string[];
 };
 
-// Icônes de stack via composant réutilisable
+// Tech stack icons are rendered via a reusable component
 
 export function Experience() {
   const [items, setItems] = useState<ExperienceItem[]>([]);
@@ -47,13 +46,13 @@ export function Experience() {
             </header>
             <ul className="list-disc pl-5 mt-2 text-sm text-fg/80 space-y-1">
               {x.bullets.map((b) => {
-                const html = DOMPurify.sanitize(marked.parse(b, { breaks: true }) as string);
+                const html = markdownToHtml(b);
                 return (
                   <li
                     key={`${x.id}-${b}`}
                     className="[&_a]:text-accent [&_a:hover]:underline [&_code]:text-accent-600"
                   >
-                    {/* biome-ignore lint/security/noDangerouslySetInnerHtml: contenu markdown purifié via DOMPurify */}
+                    {/* biome-ignore lint/security/noDangerouslySetInnerHtml: Markdown content is sanitized via DOMPurify */}
                     <span dangerouslySetInnerHTML={{ __html: html }} />
                   </li>
                 );

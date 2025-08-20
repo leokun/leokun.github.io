@@ -12,12 +12,12 @@
     "jsx": "react-jsx",
     "strict": true,
     "baseUrl": ".",
-    "types": ["vite/client", "node"],
+    "types": ["vite/client", "node", "vitest/globals"],
     "paths": {
       "@/*": ["src/*"]
     }
   },
-  "include": ["src", "vite-env.d.ts"],
+  "include": ["src", "vite-env.d.ts", "src/test/globals.d.ts"],
   "references": [
     {
       "path": "./tsconfig.node.json"
