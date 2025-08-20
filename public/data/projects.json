@@ -1,52 +1,35 @@
 [
-    {
-        "id": "portfolio-ng",
-        "title": "Portfolio — React + Vite + TanStack Router",
-        "summary": "Site personnel minimaliste (React 19, Vite 7, Tailwind 4), données statiques JSON.",
-        "tags": [
-            "react",
-            "vite",
-            "tailwind",
-            "tanstack-router"
-        ],
-        "year": 2025,
-        "link": "/",
-        "repo": "https://github.com/leo/portfolio-ng"
-    },
-    {
-        "id": "design-system-mini",
-        "title": "Mini Design System",
-        "summary": "Set de composants UI (typo, boutons, cartes) avec tokens CSS et accessibilité de base.",
-        "tags": [
-            "ui",
-            "accessibility",
-            "tailwind"
-        ],
-        "year": 2024,
-        "repo": "https://github.com/leo/design-system-mini"
-    },
-    {
-        "id": "notes-tech",
-        "title": "Notes techniques",
-        "summary": "App de notes Markdown, stockage local, recherche client simple (fuse-like).",
-        "tags": [
-            "react",
-            "pwa",
-            "search"
-        ],
-        "year": 2024,
-        "repo": "https://github.com/leo/notes-tech"
-    },
-    {
-        "id": "api-dashboard",
-        "title": "Dashboard API",
-        "summary": "Dashboard léger pour métriques d’API (latence, erreurs, RPS) avec charts simples.",
-        "tags": [
-            "charts",
-            "frontend",
-            "observability"
-        ],
-        "year": 2023,
-        "repo": "https://github.com/leo/api-dashboard"
-    }
+  {
+    "id": "portfolio-ng",
+    "title": "Portfolio — React + Vite + TanStack Router",
+    "summary": "Site personnel minimaliste (React 19, Vite 7, Tailwind 4), données statiques JSON.",
+    "tags": ["react", "vite", "tailwind", "tanstack-router"],
+    "year": 2025,
+    "link": "/",
+    "repo": "https://github.com/leo/portfolio-ng"
+  },
+  {
+    "id": "design-system-mini",
+    "title": "Mini Design System",
+    "summary": "Set de composants UI (typo, boutons, cartes) avec tokens CSS et accessibilité de base.",
+    "tags": ["ui", "accessibility", "tailwind"],
+    "year": 2024,
+    "repo": "https://github.com/leo/design-system-mini"
+  },
+  {
+    "id": "notes-tech",
+    "title": "Notes techniques",
+    "summary": "App de notes Markdown, stockage local, recherche client simple (fuse-like).",
+    "tags": ["react", "pwa", "search"],
+    "year": 2024,
+    "repo": "https://github.com/leo/notes-tech"
+  },
+  {
+    "id": "api-dashboard",
+    "title": "Dashboard API",
+    "summary": "Dashboard léger pour métriques d’API (latence, erreurs, RPS) avec charts simples.",
+    "tags": ["charts", "frontend", "observability"],
+    "year": 2023,
+    "repo": "https://github.com/leo/api-dashboard"
+  }
 ]

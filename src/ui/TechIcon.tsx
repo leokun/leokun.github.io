@@ -1,44 +1,43 @@
-import React from 'react'
-import type { IconType } from 'react-icons'
+import type { IconType } from "react-icons";
+import { FaCode, FaMicrosoft } from "react-icons/fa";
 import {
-  SiTypescript,
-  SiGo,
-  SiMongodb,
-  SiReact,
-  SiNestjs,
-  SiTurborepo,
-  SiSymfony,
-  SiPython,
-  SiPhp,
-  SiDocker,
-  SiSalesforce,
-  SiZendesk,
-  SiNextdotjs,
-  SiJest,
-  SiMui,
-  SiFastapi,
-  SiSqlalchemy,
-  SiPytest,
-  SiMysql,
-  SiJquery,
-  SiCss3,
-  SiDotnet,
-  SiApache,
-  SiVite,
-  SiTailwindcss,
-  SiGraphql,
-  SiNodedotjs,
-  SiKubernetes,
   SiAmazon,
-  SiVercel,
-  SiPrisma,
-  SiVitest,
-  SiEslint,
-  SiPrettier,
-  SiStorybook,
+  SiApache,
   SiBootstrap,
-} from 'react-icons/si'
-import { FaCode, FaMicrosoft } from 'react-icons/fa'
+  SiCss3,
+  SiDocker,
+  SiDotnet,
+  SiEslint,
+  SiFastapi,
+  SiGo,
+  SiGraphql,
+  SiJest,
+  SiJquery,
+  SiKubernetes,
+  SiMongodb,
+  SiMui,
+  SiMysql,
+  SiNestjs,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPhp,
+  SiPrettier,
+  SiPrisma,
+  SiPytest,
+  SiPython,
+  SiReact,
+  SiSalesforce,
+  SiSqlalchemy,
+  SiStorybook,
+  SiSymfony,
+  SiTailwindcss,
+  SiTurborepo,
+  SiTypescript,
+  SiVercel,
+  SiVite,
+  SiVitest,
+  SiZendesk,
+} from "react-icons/si";
 
 const ICONS: Record<string, IconType> = {
   // langages / runtimes
@@ -46,13 +45,13 @@ const ICONS: Record<string, IconType> = {
   go: SiGo,
   python: SiPython,
   php: SiPhp,
-  'c#': SiDotnet,
+  "c#": SiDotnet,
   csharp: SiDotnet,
 
   // frontend / libs
   react: SiReact,
   nextjs: SiNextdotjs,
-  'next.js': SiNextdotjs,
+  "next.js": SiNextdotjs,
   jest: SiJest,
   mui: SiMui,
   jquery: SiJquery,
@@ -97,97 +96,106 @@ const ICONS: Record<string, IconType> = {
   vercel: SiVercel,
   prisma: SiPrisma,
   vitest: SiVitest,
-}
+};
 
 const LABELS: Record<string, string> = {
-  typescript: 'TypeScript',
-  go: 'Go',
-  mongodb: 'MongoDB',
-  react: 'React',
-  nestjs: 'NestJS',
-  turborepo: 'Turborepo',
-  symfony: 'Symfony',
-  python: 'Python',
-  php: 'PHP',
-  docker: 'Docker',
-  salesforce: 'Salesforce',
-  microsoft: 'Microsoft',
-  zendesk: 'Zendesk',
-  nextjs: 'Next.js',
-  'next.js': 'Next.js',
-  jest: 'Jest',
-  mui: 'MUI',
-  fastapi: 'FastAPI',
-  sqlalchemy: 'SQLAlchemy',
-  pytest: 'pytest',
-  mysql: 'MySQL',
-  jquery: 'jQuery',
-  css: 'CSS',
-  'c#': 'C#',
-  csharp: 'C#',
-  apache: 'Apache',
-  vite: 'Vite',
-  tailwind: 'Tailwind CSS',
-  tailwindcss: 'Tailwind CSS',
-  graphql: 'GraphQL',
-  node: 'Node.js',
-  nodejs: 'Node.js',
-  kubernetes: 'Kubernetes',
-  k8s: 'Kubernetes',
-  aws: 'AWS',
-  amazon: 'AWS',
-  vercel: 'Vercel',
-  prisma: 'Prisma',
-  vitest: 'Vitest',
-  eslint: 'ESLint',
-  prettier: 'Prettier',
-  storybook: 'Storybook',
-  bootstrap: 'Bootstrap',
-}
+  typescript: "TypeScript",
+  go: "Go",
+  mongodb: "MongoDB",
+  react: "React",
+  nestjs: "NestJS",
+  turborepo: "Turborepo",
+  symfony: "Symfony",
+  python: "Python",
+  php: "PHP",
+  docker: "Docker",
+  salesforce: "Salesforce",
+  microsoft: "Microsoft",
+  zendesk: "Zendesk",
+  nextjs: "Next.js",
+  "next.js": "Next.js",
+  jest: "Jest",
+  mui: "MUI",
+  fastapi: "FastAPI",
+  sqlalchemy: "SQLAlchemy",
+  pytest: "pytest",
+  mysql: "MySQL",
+  jquery: "jQuery",
+  css: "CSS",
+  "c#": "C#",
+  csharp: "C#",
+  apache: "Apache",
+  vite: "Vite",
+  tailwind: "Tailwind CSS",
+  tailwindcss: "Tailwind CSS",
+  graphql: "GraphQL",
+  node: "Node.js",
+  nodejs: "Node.js",
+  kubernetes: "Kubernetes",
+  k8s: "Kubernetes",
+  aws: "AWS",
+  amazon: "AWS",
+  vercel: "Vercel",
+  prisma: "Prisma",
+  vitest: "Vitest",
+  eslint: "ESLint",
+  prettier: "Prettier",
+  storybook: "Storybook",
+  bootstrap: "Bootstrap",
+};
 
 function normalize(raw: string): string {
-  const s = raw.trim().toLowerCase()
-  if (s === 'next.js') return 'nextjs'
-  if (s === 'node.js') return 'node'
-  if (s === 'csharp') return 'c#'
-  return s
+  const s = raw.trim().toLowerCase();
+  if (s === "next.js") return "nextjs";
+  if (s === "node.js") return "node";
+  if (s === "csharp") return "c#";
+  return s;
 }
 
 export function iconForTech(tech: string): IconType {
-  const key = normalize(tech)
-  return ICONS[key] ?? FaCode
+  const key = normalize(tech);
+  return ICONS[key] ?? FaCode;
 }
 
 export function labelForTech(tech: string): string {
-  const key = normalize(tech)
-  return LABELS[key] ?? tech
+  const key = normalize(tech);
+  return LABELS[key] ?? tech;
 }
 
 export type TechIconProps = {
-  tech: string
-  variant?: 'square' | 'inline'
-  tooltip?: boolean
-  className?: string
-}
+  tech: string;
+  variant?: "square" | "inline";
+  tooltip?: boolean;
+  className?: string;
+};
 
-export function TechIcon({ tech, variant = 'square', tooltip = variant === 'square', className }: TechIconProps) {
-  const Icon = iconForTech(tech)
-  const label = labelForTech(tech)
-  if (variant === 'inline') {
+export function TechIcon({
+  tech,
+  variant = "square",
+  tooltip = variant === "square",
+  className,
+}: TechIconProps) {
+  const Icon = iconForTech(tech);
+  const label = labelForTech(tech);
+  if (variant === "inline") {
     return (
-      <span className={['inline-flex items-center', className].filter(Boolean).join(' ')} title={label} aria-label={label}>
+      <span
+        className={["inline-flex items-center", className].filter(Boolean).join(" ")}
+        title={label}
+      >
         <Icon className="w-4 h-4 align-middle" />
       </span>
-    )
+    );
   }
   return (
     <span
       className={[
-        'relative group inline-flex items-center justify-center w-7 h-7 rounded border border-accent/30 text-accent/90',
+        "relative group inline-flex items-center justify-center w-7 h-7 rounded border border-accent/30 text-accent/90",
         className,
-      ].filter(Boolean).join(' ')}
-      aria-label={label}
-      tabIndex={0}
+      ]
+        .filter(Boolean)
+        .join(" ")}
+      title={label}
     >
       <Icon className="w-4 h-4" />
       {tooltip && (
@@ -199,5 +207,5 @@ export function TechIcon({ tech, variant = 'square', tooltip = variant === 'squa
         </span>
       )}
     </span>
-  )
+  );
 }

@@ -1,32 +1,33 @@
-import React, { useEffect, useMemo, useState } from 'react'
-import { marked } from 'marked'
-import DOMPurify from 'isomorphic-dompurify'
-import { TechIcon } from '../ui/TechIcon'
+import DOMPurify from "isomorphic-dompurify";
+import { marked } from "marked";
+import { useEffect, useId, useMemo, useState } from "react";
+import { TechIcon } from "../ui/TechIcon";
 
 type ExperienceItem = {
-  id: string
-  title: string
-  company: string
-  period: string
-  location?: string
-  bullets: string[]
-  stack?: string[]
-}
+  id: string;
+  title: string;
+  company: string;
+  period: string;
+  location?: string;
+  bullets: string[];
+  stack?: string[];
+};
 
 // Icônes de stack via composant réutilisable
 
 export function Experience() {
-  const [items, setItems] = useState<ExperienceItem[]>([])
-  const [format, setFormat] = useState<'pdf' | 'png'>('pdf')
+  const [items, setItems] = useState<ExperienceItem[]>([]);
+  const [format, setFormat] = useState<"pdf" | "png">("pdf");
+  const selectId = useId();
 
-  const resumeHref = useMemo(() => `/cv/Léo Stewart DFS-ng-250731.${format}`, [format])
+  const resumeHref = useMemo(() => `/cv/Léo Stewart DFS-ng-250731.${format}`, [format]);
 
   useEffect(() => {
-    fetch('/data/experience.json')
-      .then(r => r.json())
+    fetch("/data/experience.json")
+      .then((r) => r.json())
       .then(setItems)
-      .catch(() => setItems([]))
-  }, [])
+      .catch(() => setItems([]));
+  }, []);
 
   return (
     <section className="space-y-6">
@@ -45,19 +46,23 @@ export function Experience() {
               <span className="text-xs text-fg/60 whitespace-nowrap">{x.period}</span>
             </header>
             <ul className="list-disc pl-5 mt-2 text-sm text-fg/80 space-y-1">
-              {x.bullets.map((b, i) => {
-                const html = DOMPurify.sanitize(marked.parse(b, { breaks: true }) as string)
+              {x.bullets.map((b) => {
+                const html = DOMPurify.sanitize(marked.parse(b, { breaks: true }) as string);
                 return (
-                  <li key={i} className="[&_a]:text-accent [&_a:hover]:underline [&_code]:text-accent-600">
+                  <li
+                    key={`${x.id}-${b}`}
+                    className="[&_a]:text-accent [&_a:hover]:underline [&_code]:text-accent-600"
+                  >
+                    {/* biome-ignore lint/security/noDangerouslySetInnerHtml: contenu markdown purifié via DOMPurify */}
                     <span dangerouslySetInnerHTML={{ __html: html }} />
                   </li>
-                )
+                );
               })}
             </ul>
             {x.stack && x.stack.length > 0 ? (
               <div className="mt-3 pt-2 border-t border-accent/20 flex flex-wrap items-center gap-2.5">
-                {x.stack.map((tech, idx) => (
-                  <TechIcon key={idx} tech={tech} />
+                {x.stack.map((tech) => (
+                  <TechIcon key={`${x.id}-${tech}`} tech={tech} />
                 ))}
               </div>
             ) : null}
@@ -66,13 +71,15 @@ export function Experience() {
       </div>
       <div className="mt-8 border-t border-accent/30 pt-6">
         <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-4">
-          <label htmlFor="cv-format" className="text-sm text-fg/80">Télécharger mon CV:</label>
+          <label htmlFor="cv-format" className="text-sm text-fg/80">
+            Télécharger mon CV:
+          </label>
           <div className="flex items-center gap-3">
             <select
-              id="cv-format"
+              id={selectId}
               className="bg-bg border border-accent/30 rounded px-2 py-1 text-sm"
               value={format}
-              onChange={(e) => setFormat(e.target.value as 'pdf' | 'png')}
+              onChange={(e) => setFormat(e.target.value as "pdf" | "png")}
             >
               <option value="pdf">PDF</option>
               <option value="png">PNG</option>
@@ -90,5 +97,5 @@ export function Experience() {
         </div>
       </div>
     </section>
-  )
+  );
 }

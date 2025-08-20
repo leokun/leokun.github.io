@@ -1,90 +1,71 @@
 [
-    {
-        "id": "epsor-2025-now",
-        "title": "Développeur Fullstack",
-        "company": "Epsor",
-        "period": "2025 — Aujourd’hui",
-        "location": "Paris (télétravail)",
-        "stack": [
-            "typescript",
-            "go",
-            "mongodb",
-            "react"
-        ],
-        "bullets": [
-            "Développement *backend* en **TypeScript** et **Go**.",
-            "Seed et migration de bases **MongoDB**.",
-            "Création de composants **React**."
-        ]
-    },
-    {
-        "id": "autres-activites-2023-2024",
-        "title": "Autres activités",
-        "company": "Activités personnelles",
-        "period": "2023 — 2024",
-        "location": "Vannes, Sulniac",
-        "stack": [
-            "typescript",
-            "nestjs",
-            "turborepo",
-            "symfony",
-            "cleancode"
-        ],
-        "bullets": [
-            "Auto-formation:\n * **TypeScript** (+ *NestJS*) \n * *Turborepo*\n * *Symfony*\n * **Clean Code** et **Clean Architecture**",
-            "Projet perso 2048: [le jeu](https://2048.wasabee.fr) — [le code](https://github.com/leokun/2048).",
-            "Temps personnel: congé paternité 👶."
-        ]
-    },
-    {
-        "id": "axialys-2017-2023",
-        "title": "Développeur Fullstack",
-        "company": "Axialys",
-        "period": "2017 — 2023",
-        "location": "Courbevoie (télétravail)",
-        "stack": [
-            "python",
-            "php",
-            "docker",
-            "salesforce",
-            "microsoft",
-            "zendesk",
-            "react",
-            "nextjs",
-            "jest",
-            "mui",
-            "fastapi",
-            "sqlalchemy",
-            "pytest"
-        ],
-        "bullets": [
-            "Développement en **Python** et **PHP** (extranet, analyse de CSV).",
-            "Création/optimisation de conteneurs (**Docker**, **docker-compose**).",
-            "Intégrations CRM: *Salesforce*, *Microsoft Dynamics*, *Zendesk*.",
-            "Nouveau portail en **React** (*Next.js*, *Jest*, *MUI*).",
-            "APIs **Python**: *FastAPI*, *SQLAlchemy*, *pytest*."
-        ]
-    },
-    {
-        "id": "alcion-2011-2017",
-        "title": "Développeur Web et Logiciel",
-        "company": "Alcion",
-        "period": "2011 — 2017",
-        "location": "Saint‑Germain‑en‑Laye",
-        "stack": [
-            "php",
-            "mysql",
-            "jquery",
-            "css",
-            "c#",
-            "apache",
-            "bootstrap"
-        ],
-        "bullets": [
-            "E‑commerce mutualisé: **PHP**, **MySQL**, *jQuery*, **CSS**.",
-            "PDO pour l’accès base de données et services *SOAP* en **PHP**.",
-            "Logiciel embarqué en **C#** (WinCE 5/6).",
-            "Administration serveurs: **PHP**, *Apache*."
-        ]
-    }
+  {
+    "id": "epsor-2025-now",
+    "title": "Développeur Fullstack",
+    "company": "Epsor",
+    "period": "2025 — Aujourd’hui",
+    "location": "Paris (télétravail)",
+    "stack": ["typescript", "go", "mongodb", "react"],
+    "bullets": [
+      "Développement *backend* en **TypeScript** et **Go**.",
+      "Seed et migration de bases **MongoDB**.",
+      "Création de composants **React**."
+    ]
+  },
+  {
+    "id": "autres-activites-2023-2024",
+    "title": "Autres activités",
+    "company": "Activités personnelles",
+    "period": "2023 — 2024",
+    "location": "Vannes, Sulniac",
+    "stack": ["typescript", "nestjs", "turborepo", "symfony", "cleancode"],
+    "bullets": [
+      "Auto-formation:\n * **TypeScript** (+ *NestJS*) \n * *Turborepo*\n * *Symfony*\n * **Clean Code** et **Clean Architecture**",
+      "Projet perso 2048: [le jeu](https://2048.wasabee.fr) — [le code](https://github.com/leokun/2048).",
+      "Temps personnel: congé paternité 👶."
+    ]
+  },
+  {
+    "id": "axialys-2017-2023",
+    "title": "Développeur Fullstack",
+    "company": "Axialys",
+    "period": "2017 — 2023",
+    "location": "Courbevoie (télétravail)",
+    "stack": [
+      "python",
+      "php",
+      "docker",
+      "salesforce",
+      "microsoft",
+      "zendesk",
+      "react",
+      "nextjs",
+      "jest",
+      "mui",
+      "fastapi",
+      "sqlalchemy",
+      "pytest"
+    ],
+    "bullets": [
+      "Développement en **Python** et **PHP** (extranet, analyse de CSV).",
+      "Création/optimisation de conteneurs (**Docker**, **docker-compose**).",
+      "Intégrations CRM: *Salesforce*, *Microsoft Dynamics*, *Zendesk*.",
+      "Nouveau portail en **React** (*Next.js*, *Jest*, *MUI*).",
+      "APIs **Python**: *FastAPI*, *SQLAlchemy*, *pytest*."
+    ]
+  },
+  {
+    "id": "alcion-2011-2017",
+    "title": "Développeur Web et Logiciel",
+    "company": "Alcion",
+    "period": "2011 — 2017",
+    "location": "Saint‑Germain‑en‑Laye",
+    "stack": ["php", "mysql", "jquery", "css", "c#", "apache", "bootstrap"],
+    "bullets": [
+      "E‑commerce mutualisé: **PHP**, **MySQL**, *jQuery*, **CSS**.",
+      "PDO pour l’accès base de données et services *SOAP* en **PHP**.",
+      "Logiciel embarqué en **C#** (WinCE 5/6).",
+      "Administration serveurs: **PHP**, *Apache*."
+    ]
+  }
 ]

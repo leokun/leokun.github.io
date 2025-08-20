@@ -1,56 +1,57 @@
 @import "tailwindcss";
 
+/* biome-ignore lint/suspicious/noUnknownAtRules: Tailwind v4 @theme is expected here */
 @theme {
-    --color-bg: #0b0f10;
-    --color-fg: #c8d1d1;
-    --color-accent: #0fb9b1;
-    --color-accent-600: #0a8f89;
-    --color-accent-700: #086e69;
-    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --color-bg: #0b0f10;
+  --color-fg: #c8d1d1;
+  --color-accent: #0fb9b1;
+  --color-accent-600: #0a8f89;
+  --color-accent-700: #086e69;
+  --font-mono:
+    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
 
-    --fs-base: 1.250rem;
+  --fs-base: 1.25rem;
 
-    --text-xs: calc(var(--fs-base) * 0.75);
-    --text-sm: calc(var(--fs-base) * 0.875);
-    --text-base: var(--fs-base);
-    --text-lg: calc(var(--fs-base) * 1.125);
-    --text-xl: calc(var(--fs-base) * 1.25);
-    --text-2xl: calc(var(--fs-base) * 1.5);
-    --text-3xl: calc(var(--fs-base) * 1.875);
-    --text-4xl: calc(var(--fs-base) * 2.25);
-    --text-5xl: calc(var(--fs-base) * 3);
-    --text-6xl: calc(var(--fs-base) * 3.75);
-    --text-7xl: calc(var(--fs-base) * 4.5);
-    --text-8xl: calc(var(--fs-base) * 6);
+  --text-xs: calc(var(--fs-base) * 0.75);
+  --text-sm: calc(var(--fs-base) * 0.875);
+  --text-base: var(--fs-base);
+  --text-lg: calc(var(--fs-base) * 1.125);
+  --text-xl: calc(var(--fs-base) * 1.25);
+  --text-2xl: calc(var(--fs-base) * 1.5);
+  --text-3xl: calc(var(--fs-base) * 1.875);
+  --text-4xl: calc(var(--fs-base) * 2.25);
+  --text-5xl: calc(var(--fs-base) * 3);
+  --text-6xl: calc(var(--fs-base) * 3.75);
+  --text-7xl: calc(var(--fs-base) * 4.5);
+  --text-8xl: calc(var(--fs-base) * 6);
 }
-
-
 
 /* Rétro monochrome + teal accents */
 ::selection {
-    background: #0fb9b1;
-    color: #001010;
+  background: #0fb9b1;
+  color: #001010;
 }
 
 html,
 body,
 #root {
-    height: 100%;
+  height: 100%;
 }
 
 strong {
-    color: var(--color-accent-600);
+  color: var(--color-accent-600);
 }
 
 em {
-    color: var(--color-accent-700);
+  color: var(--color-accent-700);
 }
 
 .code-block {
-    background: #0c1214;
-    color: rgb(15 185 177);
-    padding: 1rem;
-    border-radius: 0.375rem;
-    border: 2px solid rgba(15, 185, 177, 0.3);
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #0c1214;
+  color: rgb(15 185 177);
+  padding: 1rem;
+  border-radius: 0.375rem;
+  border: 2px solid rgba(15, 185, 177, 0.3);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
 }
