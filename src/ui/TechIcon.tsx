@@ -181,31 +181,36 @@ export function TechIcon({
     return (
       <span
         className={["inline-flex items-center", className].filter(Boolean).join(" ")}
-        title={label}
+        role="img"
+        aria-label={label}
       >
         <Icon className="w-4 h-4 align-middle" />
       </span>
     );
   }
+  const tooltipId = `tip-${normalize(label)}`;
   return (
-    <span
+    <button
       className={[
-        "relative group inline-flex items-center justify-center w-7 h-7 rounded border border-accent/30 text-accent/90",
+        "relative group inline-flex items-center justify-center w-7 h-7 rounded border border-accent/30 text-accent focus:outline-2 focus:outline-offset-2 focus:outline-accent/60",
         className,
       ]
         .filter(Boolean)
         .join(" ")}
-      title={label}
+      aria-describedby={tooltip ? tooltipId : undefined}
+      type="button"
+      aria-label={label}
     >
       <Icon className="w-4 h-4" />
       {tooltip && (
         <span
+          id={tooltipId}
           role="tooltip"
           className="pointer-events-none absolute bottom-full mb-1 left-1/2 -translate-x-1/2 whitespace-nowrap rounded px-2 py-0.5 text-[10px] bg-accent text-bg opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-100 z-10 shadow"
         >
           {label}
         </span>
       )}
-    </span>
+    </button>
   );
 }

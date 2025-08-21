@@ -1,0 +1,2 @@
+# Ignore Tailwind v4 @theme file not supported by Biome's CSS parser
+src/index.css

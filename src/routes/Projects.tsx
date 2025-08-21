@@ -24,6 +24,7 @@ import {
   SiTypescript,
   SiVuedotjs,
 } from "react-icons/si";
+import { Card } from "../ui/Card";
 import { TechIcon } from "../ui/TechIcon";
 
 type GitHubRepo = {
@@ -214,48 +215,50 @@ export function Projects() {
     return (
       <ul className="grid md:grid-cols-2 gap-4">
         {items.map((p) => (
-          <li key={p.id} className="border-2 border-accent/30 rounded p-4">
-            <div className="flex items-start justify-between gap-4">
-              <div className="min-w-0">
-                <h3 className="font-semibold text-lg flex items-center gap-2">
-                  <a
-                    href={p.html_url}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="hover:underline truncate"
-                  >
-                    {p.name}
-                  </a>
-                  {/* Inline tech icons for key stacks */}
-                  {(() => {
-                    const topics = (
-                      p.topics && p.topics.length > 0 ? p.topics : inferTopics(p)
-                    ).map((t) => t.toLowerCase());
-                    const picks = ["react", "nextjs", "docker"].filter((k) => topics.includes(k));
-                    if (picks.length === 0) return null;
-                    return (
-                      <span className="flex items-center gap-1.5 text-fg/80">
-                        {picks.map((t) => (
-                          <TechIcon key={t} tech={t} variant="inline" />
-                        ))}
-                      </span>
-                    );
-                  })()}
-                </h3>
+          <li key={p.id}>
+            <Card>
+              <div className="flex items-start justify-between gap-4">
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-lg flex items-center gap-2">
+                    <a
+                      href={p.html_url}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="hover:underline truncate"
+                    >
+                      {p.name}
+                    </a>
+                    {/* Inline tech icons for key stacks */}
+                    {(() => {
+                      const topics = (
+                        p.topics && p.topics.length > 0 ? p.topics : inferTopics(p)
+                      ).map((t) => t.toLowerCase());
+                      const picks = ["react", "nextjs", "docker"].filter((k) => topics.includes(k));
+                      if (picks.length === 0) return null;
+                      return (
+                        <span className="flex items-center gap-1.5 text-fg/80">
+                          {picks.map((t) => (
+                            <TechIcon key={t} tech={t} variant="inline" />
+                          ))}
+                        </span>
+                      );
+                    })()}
+                  </h3>
+                </div>
+                <span className="text-[10px] text-fg/60 whitespace-nowrap">
+                  {new Date(p.updated_at).toLocaleDateString("fr-FR")}
+                </span>
               </div>
-              <span className="text-[10px] text-fg/60 whitespace-nowrap">
-                {new Date(p.updated_at).toLocaleDateString("fr-FR")}
-              </span>
-            </div>
-            <p className="text-sm text-fg/70 mt-1">{p.description ?? "—"}</p>
-            {/* Languages */}
-            {p.languages.length > 0 && (
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {p.languages.map((l) => languageBadge(l))}
-              </div>
-            )}
-            {/* Technologies (GitHub topics + heuristic) */}
-            <RepoTopics repo={p} />
+              <p className="text-sm text-fg/70 mt-1">{p.description ?? "—"}</p>
+              {/* Languages */}
+              {p.languages.length > 0 && (
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {p.languages.map((l) => languageBadge(l))}
+                </div>
+              )}
+              {/* Technologies (GitHub topics + heuristic) */}
+              <RepoTopics repo={p} />
+            </Card>
           </li>
         ))}
       </ul>

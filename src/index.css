@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* biome-ignore lint/suspicious/noUnknownAtRules: Tailwind v4 @theme is expected here */
 @theme {
   --color-bg: #0b0f10;
   --color-fg: #c8d1d1;

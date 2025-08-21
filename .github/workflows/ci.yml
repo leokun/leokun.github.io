@@ -30,6 +30,9 @@ jobs:
       - name: Lint (Biome)
         run: pnpm lint
 
+      - name: Generate sitemap
+        run: pnpm sitemap
+
       - name: Typecheck & Build
         run: pnpm build
 

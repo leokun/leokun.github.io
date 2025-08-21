@@ -1,6 +1,7 @@
 import { useEffect, useId, useMemo, useState } from "react";
 import { markdownToHtml } from "@/lib/markdown";
 import { ExperienceListSchema } from "@/lib/schemas";
+import { Card } from "../ui/Card";
 import { TechIcon } from "../ui/TechIcon";
 
 type ExperienceItem = {
@@ -38,7 +39,7 @@ export function Experience() {
       <h1 className="text-2xl font-bold text-accent">Expérience</h1>
       <div className="space-y-4">
         {items.map((x) => (
-          <article key={x.id} className="border-2 border-accent/30 rounded p-4">
+          <Card key={x.id}>
             <header className="flex items-start justify-between gap-4">
               <div>
                 <h3 className="font-semibold">{x.title}</h3>
@@ -70,7 +71,7 @@ export function Experience() {
                 ))}
               </div>
             ) : null}
-          </article>
+          </Card>
         ))}
       </div>
       <div className="mt-8 border-t border-accent/30 pt-6">

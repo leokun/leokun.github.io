@@ -9,9 +9,9 @@ describe("TechIcon", () => {
     expect(typeof Icon).toBe("function");
   });
 
-  it("renders inline variant with title", () => {
+  it("renders inline variant with accessible name", () => {
     render(<TechIcon tech="react" variant="inline" />);
-    const el = screen.getByTitle("React");
+    const el = screen.getByRole("img", { name: "React" });
     expect(el).toBeInTheDocument();
   });
 });
